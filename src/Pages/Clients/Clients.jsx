@@ -1,8 +1,10 @@
+import './Clients.css'
+
 const Clients = () => {
     return (
-      <div className="grid grid-cols-1 lg:grid-cols-2 mx-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 mx-4 gap-10 my-5">
         {/* card 1 */}
-        <div className="card w-96 bg-base-100 shadow-xl" data-aos="flip-left"
+        <div className="card cards w-96 bg-base-100 shadow-xl" data-aos="flip-left"
        data-aos-easing="ease-out-cubic"
        data-aos-duration="2000">
           <figure className="px-10 pt-10">
