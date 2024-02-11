@@ -1,9 +1,8 @@
 
-
 const NavBar = () => {
     const list = <>
     <li><a href="/">HOME</a></li>
-    <li><a href="#audiences">AUDIENCES</a></li>
+    <li><a href="#clients">CLIENTS</a></li>
     <li><a href="#about">ABOUT</a></li>
     <li><a href="#contact">CONTACT US</a></li>
     </>
@@ -21,7 +20,7 @@ const NavBar = () => {
     </div>
   </div>
   <div className="navbar-center hidden lg:flex lg:flex-col">
-  <p className="text-orange-300 text-3xl">TASK MASTER</p>
+  <p className="text-orange-300 text-3xl">TASKIFY</p>
     <ul className="menu menu-horizontal px-1">
       {list}
     </ul>
