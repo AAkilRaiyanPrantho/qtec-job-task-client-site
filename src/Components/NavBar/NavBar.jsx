@@ -1,10 +1,10 @@
 
 const NavBar = () => {
     const list = <>
-    <li><a href="/">HOME</a></li>
-    <li><a href="#clients">CLIENTS</a></li>
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="#contact">CONTACT US</a></li>
+    <li><a href="/" className="text-[#1584af]">HOME</a></li>
+    <li><a href="#clients" className="text-[#1584af]" >CLIENTS</a></li>
+    <li><a href="#about" className="text-[#1584af]">ABOUT</a></li>
+    <li><a href="#contact" className="text-[#1584af]">CONTACT US</a></li>
     </>
     return (
         <div>

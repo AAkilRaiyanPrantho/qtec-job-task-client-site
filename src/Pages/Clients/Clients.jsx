@@ -15,7 +15,7 @@ const Clients = () => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title text-orange-300">Developers</h2>
+            <h2 className="card-title text-[#1584af]">Developers</h2>
             <p>Software or Web Developers usually need to work on multiple projects at once. So in order to keep track of all those projects, they rely on our Task Master application.</p>
             
           </div>
@@ -32,7 +32,7 @@ const Clients = () => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title text-orange-300">Doctors</h2>
+            <h2 className="card-title text-[#1584af]">Doctors</h2>
             <p>Doctors lead a very busy life. They need to attend patients, take part in meetings and also if he's a surgeon, then he needs to manage all his Operation dates.To manage all these chaos, they choose our Task Master app to make everything easier.</p>
             
           </div>
@@ -49,7 +49,7 @@ const Clients = () => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title text-orange-300">Students</h2>
+            <h2 className="card-title text-[#1584af]">Students</h2>
             <p>Student life is full of stress. They need to keep track of assignments, quizzes, exams, presentations and what not. If not being careful, then all these pressure may cause a chaotic situation. To prevent such situation, they choose us to make it easier for them.</p>
             
           </div>
@@ -66,7 +66,7 @@ const Clients = () => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title text-orange-300">Personal Use</h2>
+            <h2 className="card-title text-[#1584af]">Personal Use</h2>
             <p>In our day-to-day life, we take part in various activities. We may need to attend and go to various places at various times. And sometimes without proper time management, we may miss our schedules tasks. So to make it much easier to remember and not to forget any appointments, people in their personal take our services as well. </p>
             
           </div>
