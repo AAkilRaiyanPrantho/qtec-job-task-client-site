@@ -8,8 +8,10 @@ import "react-toastify/dist/ReactToastify.css";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 import { Helmet } from "react-helmet";
-import auth from "../../../firebase/firebase.config";
-import { AuthContext } from "../../../Components/AuthProviders/AuthProvider";
+
+
+import auth from "../../firebase/firebase.config";
+import { AuthContext } from "../../Components/AuthProvider/AuthProvider";
 
 const SignIn = () => {
   const navigate = useNavigate();
