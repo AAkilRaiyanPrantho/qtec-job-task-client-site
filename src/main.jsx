@@ -14,6 +14,7 @@ import SignIn from './Pages/SignIn/SignIn';
 import AuthProvider from './Components/AuthProvider/AuthProvider';
 import PrivateRoute from './Routes/PrivateRoute';
 import Dashboard from './Layout/Dashboard';
+import AddTasks from './Pages/AddTasks/AddTasks';
 
 
 const router = createBrowserRouter([
@@ -41,10 +42,10 @@ const router = createBrowserRouter([
     element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     errorElement: <ErrorPage></ErrorPage>,
     children: [
-      // {
-      //   path: 'createTask',
-      //   element: <PrivateRoute><CreateTasks></CreateTasks> </PrivateRoute>
-      // },
+      {
+        path: 'addTasks',
+        element: <PrivateRoute><AddTasks></AddTasks> </PrivateRoute>
+      },
       // {
       //   path: 'allTasks',
       //   element: <PrivateRoute><AllTasks></AllTasks></PrivateRoute>,

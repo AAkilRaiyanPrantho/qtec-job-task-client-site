@@ -33,15 +33,16 @@ const Dashboard = () => {
           </label>
           <div>
             <h1 className="font-semibold text-2xl underline py-5 text-[#008080]">
-              Welcome to the Task Master DashBoard
+              Welcome to your Taskify DashBoard
             </h1>
-            {!outletLoaded && (
+            
+          </div>
+          <div>
+          {!outletLoaded && (
               <p className="font-semibold text-lg py-2 text-[#333333]">
                 Click on the 'All Tasks' tab to see your Tasks
               </p>
             )}
-          </div>
-          <div>
             <Outlet onLoad={() => setOutletLoaded(true)}></Outlet>
           </div>
         </div>
@@ -72,7 +73,7 @@ const Dashboard = () => {
               </Link>
             </li>
             <li>
-              <Link to={"/dashboard/createTask"}>
+              <Link to={"/dashboard/addTasks"}>
                 <FaPlus /> Add Task{" "}
               </Link>
             </li>
