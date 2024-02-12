@@ -1,4 +1,4 @@
-img {
+.image {
     --g: 4px;     /* the gap */
     --b: 12px;    /* border thickness*/
     --c: #6A5ACD; /* the color */
@@ -16,7 +16,7 @@ img {
     filter: grayscale(50%);
     transition: .3s;
   }
-  img:hover {
+  .image:hover {
     --_p: 75%;
     filter: grayscale(0%);
   }

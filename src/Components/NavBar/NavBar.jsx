@@ -50,7 +50,7 @@ const NavBar = () => {
                 <div className="w-10 rounded-full">
                   {user.photoURL ? (
                     <>
-                      <img src={user.photoURL} alt="" />
+                      <img className="ignore-styles" src={user.photoURL} alt="" />
                     </>
                   ) : (
                     <>

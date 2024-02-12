@@ -11,7 +11,7 @@ const Clients = () => {
             <img
               src="https://cdn-employer-wp.arc.dev/wp-content/uploads/2022/04/good-software-developer-1128x635.jpg"
               alt="Shoes"
-              className="rounded-xl"
+              className="rounded-xl image"
             />
           </figure>
           <div className="card-body items-center text-center">
@@ -28,7 +28,7 @@ const Clients = () => {
             <img
               src="https://hms.harvard.edu/sites/default/files/media/800-Doctors-Talking-GettyImages-1421919753.jpg"
               alt="Shoes"
-              className="rounded-xl"
+              className="rounded-xl image"
             />
           </figure>
           <div className="card-body items-center text-center">
@@ -45,7 +45,7 @@ const Clients = () => {
             <img
               src="https://www.thoughtco.com/thmb/dChBnpU_nYn0QE54kiA_s-H9nHo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/teenage-students-in-classroom--141090063-5a653ed40c1a8200366bdd66.jpg"
               alt="Shoes"
-              className="rounded-xl"
+              className="rounded-xl image"
             />
           </figure>
           <div className="card-body items-center text-center">
@@ -62,7 +62,7 @@ const Clients = () => {
             <img
               src="https://images.pond5.com/smiling-woman-child-speaking-phone-090210095_prevstill.jpeg"
               alt="Shoes"
-              className="rounded-xl"
+              className="rounded-xl image"
             />
           </figure>
           <div className="card-body items-center text-center">

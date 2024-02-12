@@ -12,6 +12,8 @@ import Home from './Pages/Home/Home';
 import SignUp from './Pages/SignUp/SignUp';
 import SignIn from './Pages/SignIn/SignIn';
 import AuthProvider from './Components/AuthProvider/AuthProvider';
+import PrivateRoute from './Routes/PrivateRoute';
+import Dashboard from './Layout/Dashboard';
 
 
 const router = createBrowserRouter([
@@ -34,6 +36,27 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: "/dashboard",
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      // {
+      //   path: 'createTask',
+      //   element: <PrivateRoute><CreateTasks></CreateTasks> </PrivateRoute>
+      // },
+      // {
+      //   path: 'allTasks',
+      //   element: <PrivateRoute><AllTasks></AllTasks></PrivateRoute>,
+      //   loader: () => fetch('https://scic-task-8-task-management-server.vercel.app/tasks')
+      // },
+      // {
+      //   path: 'update/:id',
+      //   element: <PrivateRoute><UpdateTask></UpdateTask></PrivateRoute>,
+      //   loader: ({params}) => fetch(`https://scic-task-8-task-management-server.vercel.app/tasks/${params.id}`)
+      // }
+    ]
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -5,3 +5,7 @@
 body{
   color: #555555;
 }
+
+.noHover{
+  pointer-events: none;
+}

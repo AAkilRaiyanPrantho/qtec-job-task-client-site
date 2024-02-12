@@ -1,12 +1,14 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { FaDoorOpen, FaHouse, FaList, FaPlus } from "react-icons/fa6";
-import { useContext } from "react";
-import { AuthContext } from "../../Components/AuthProviders/AuthProvider";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Components/AuthProvider/AuthProvider";
+
 
 const Dashboard = () => {
   const { logOut, user } = useContext(AuthContext);
   // const location = useLocation();
   const navigate = useNavigate();
+  const [outletLoaded, setOutletLoaded] = useState(false);
 
   const handleLogOut = () => {
     logOut()
@@ -19,7 +21,7 @@ const Dashboard = () => {
   };
   return (
     <div>
-      <div className="drawer lg:drawer-open">
+      <div className="drawer bg-[#B2DFDB] lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center max-lg:justify-center lg:justify-start p-4 text-center">
           {/* Page content here */}
@@ -30,24 +32,26 @@ const Dashboard = () => {
             Open drawer
           </label>
           <div>
-            <h1 className="font-semibold text-2xl underline py-5 text-orange-200">
+            <h1 className="font-semibold text-2xl underline py-5 text-[#008080]">
               Welcome to the Task Master DashBoard
             </h1>
-            <p className="font-semibold text-lg py-2">
-              Click on the 'All Tasks' tab to see your Tasks
-            </p>
+            {!outletLoaded && (
+              <p className="font-semibold text-lg py-2 text-[#333333]">
+                Click on the 'All Tasks' tab to see your Tasks
+              </p>
+            )}
           </div>
           <div>
-            <Outlet></Outlet>
+            <Outlet onLoad={() => setOutletLoaded(true)}></Outlet>
           </div>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side bg-[#004D40]">
           <div>
             <h1 className="lg:px-10 lg:py-4 text-center text-3xl font-bold italic text-orange-300">
-              Task Master
+              Taskify
             </h1>
             <img
-              className="w-24 mask mask-squircle mx-auto"
+              className="w-24 noHover mask mask-squircle mx-auto"
               src={user.photoURL}
               alt=""
             />
@@ -60,7 +64,7 @@ const Dashboard = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+          <ul className="menu p-4 w-80 min-h-full text-[#FFFFFF]">
             {/* Sidebar content here */}
             <li>
               <Link to={"/dashboard/allTasks"}>
