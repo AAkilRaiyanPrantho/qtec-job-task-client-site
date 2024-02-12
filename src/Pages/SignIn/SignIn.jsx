@@ -86,7 +86,7 @@ const SignIn = () => {
       <Helmet>
         <title>Task Master || Sign In</title>
       </Helmet>
-      <div className="hero min-h-screen bg-orange-100 mb-2">
+      <div className="hero min-h-screen mb-2">
         <div className="hero-content flex-col lg:flex-col">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">
