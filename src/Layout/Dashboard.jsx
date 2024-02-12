@@ -1,30 +1,32 @@
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { FaDoorOpen, FaHouse, FaList, FaPlus } from "react-icons/fa6";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react"; // Import useEffect and useState
 import { AuthContext } from "../Components/AuthProvider/AuthProvider";
-
 
 const Dashboard = () => {
   const { logOut, user } = useContext(AuthContext);
-  // const location = useLocation();
   const navigate = useNavigate();
-  const [outletLoaded, setOutletLoaded] = useState(false);
+  const [outletLoaded, setOutletLoaded] = useState(false); // State to track Outlet loading
+
+  useEffect(() => {
+    // Set outletLoaded to true when the component is mounted
+    setOutletLoaded(true);
+  }, []);
 
   const handleLogOut = () => {
     logOut()
       .then(() => {
         console.log("User logged Out")
-        // Navigate after logout
         navigate('/');
       })
       .catch((error) => console.error(error));
   };
+
   return (
     <div>
       <div className="drawer bg-[#B2DFDB] lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col items-center max-lg:justify-center lg:justify-start p-4 text-center">
-          {/* Page content here */}
           <label
             htmlFor="my-drawer-2"
             className="btn btn-primary drawer-button lg:hidden"
@@ -35,15 +37,15 @@ const Dashboard = () => {
             <h1 className="font-semibold text-2xl underline py-5 text-[#008080]">
               Welcome to your Taskify DashBoard
             </h1>
-            
-          </div>
-          <div>
-          {!outletLoaded && (
+            {/* Conditional rendering based on outletLoaded state */}
+            {!outletLoaded && (
               <p className="font-semibold text-lg py-2 text-[#333333]">
                 Click on the 'All Tasks' tab to see your Tasks
               </p>
             )}
-            <Outlet onLoad={() => setOutletLoaded(true)}></Outlet>
+          </div>
+          <div>
+            <Outlet></Outlet>
           </div>
         </div>
         <div className="drawer-side bg-[#004D40]">

@@ -15,7 +15,7 @@ const AddTasks = () => {
         console.log(data);
     
         // Sending new task data to the server
-        fetch('https://scic-task-8-task-management-server.vercel.app/tasks', {
+        fetch('http://localhost:5000/allTasks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -42,7 +42,7 @@ const AddTasks = () => {
         <div className="hero">
       <div className="hero-content flex-col">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Create Your Task</h1>
+          <h1 className="text-5xl font-bold">Add New Task</h1>
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                   <form

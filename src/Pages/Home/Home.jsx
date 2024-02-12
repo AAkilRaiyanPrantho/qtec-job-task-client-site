@@ -5,6 +5,7 @@ import AboutUs from "../AboutUs/AboutUs";
 import Clients from "../Clients/Clients";
 import { useContext } from "react";
 import { AuthContext } from "../../Components/AuthProvider/AuthProvider";
+import ContactUs from "../ContactUs/ContactUs";
 
 
 const Home = () => {
@@ -31,6 +32,10 @@ const Home = () => {
             <div id="about">
             <Headings mainHeading={'About Us'} subHeading={'So, who are we?'}></Headings>
             <AboutUs></AboutUs>
+            </div>
+            <div id="contact">
+            <Headings mainHeading={'Contact Us'} subHeading={'Stay connected with us'}></Headings>
+            <ContactUs></ContactUs>
             </div>
         </div>
     );
