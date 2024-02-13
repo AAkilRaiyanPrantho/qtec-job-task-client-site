@@ -52,8 +52,8 @@ const handleDelete = _id => {
 return (
     <div>
         <div className={`card w-96 text-primary-content ${
-            priority === 'High'? 'bg-red-700':
-            priority === 'Medium'? 'bg-blue-500': 'bg-green-500'
+            priority === 'High'? 'bg-red-500':
+            priority === 'Medium'? 'bg-orange-500': 'bg-blue-500'
             }`}>
 <div className="card-body items-center">
 <h2 className="card-title">{taskName}</h2>

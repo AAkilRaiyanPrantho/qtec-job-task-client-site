@@ -5,7 +5,10 @@ const Incomplete = ({ incomplete }) => {
 
   return (
     <div>
-      <div className="card w-96 bg-green-400 text-primary-content">
+      <div className={`card w-96 text-primary-content ${
+            priority === 'High'? 'bg-red-500':
+            priority === 'Medium'? 'bg-orange-500': 'bg-blue-500'
+            }`}>
         <div className="card-body items-center">
           <h2 className="card-title">{taskName}</h2>
           <p>{taskDescription}</p>
