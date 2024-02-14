@@ -4,6 +4,9 @@ import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Components/AuthProvider/AuthProvider';
 
+import { AiTwotoneDelete } from "react-icons/ai";
+import { FaRegEdit } from "react-icons/fa";
+
 const AllTask = ( {task} ) => {
     const{_id, taskName, taskDescription, dueDate, priority, status} = task;
 console.log(_id, taskName, taskDescription, dueDate, priority, status);
@@ -62,8 +65,8 @@ return (
 <p>Status: <span className="font-bold">{status}</span></p>
 <p>Deadline: <span className="font-bold">{dueDate}</span></p>
 <div className="card-actions justify-end">
-  <button onClick={() => handleDelete(_id)} className="btn btn-error">Delete</button>
-  <button className="btn btn-primary"><Link to={`/dashboard/update/${_id}`}>Update</Link></button>
+  <button onClick={() => handleDelete(_id)} className="text-3xl btn btn-ghost tooltip" data-tip="Delete Task"><AiTwotoneDelete /></button>
+  <button className="text-3xl btn btn-ghost tooltip" data-tip="Edit Task"><Link to={`/dashboard/update/${_id}`}><FaRegEdit /></Link></button>
 </div>
 </div>
 </div>

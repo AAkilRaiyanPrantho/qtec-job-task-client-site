@@ -16,6 +16,7 @@ import PrivateRoute from './Routes/PrivateRoute';
 import Dashboard from './Layout/Dashboard';
 import AddTasks from './Pages/AddTasks/AddTasks';
 import AllTasks from './Pages/AllTasks/AllTasks';
+import UpdateTask from './Pages/Update/UpdateTask';
 
 
 const router = createBrowserRouter([
@@ -52,11 +53,11 @@ const router = createBrowserRouter([
         element: <PrivateRoute><AllTasks></AllTasks></PrivateRoute>,
         loader: () => fetch('http://localhost:5000/allTasks')
       },
-      // {
-      //   path: 'update/:id',
-      //   element: <PrivateRoute><UpdateTask></UpdateTask></PrivateRoute>,
-      //   loader: ({params}) => fetch(`https://scic-task-8-task-management-server.vercel.app/tasks/${params.id}`)
-      // }
+      {
+        path: 'update/:id',
+        element: <PrivateRoute><UpdateTask></UpdateTask></PrivateRoute>,
+        loader: ({params}) => fetch(`http://localhost:5000/allTasks/${params.id}`)
+      }
     ]
   }
 ]);

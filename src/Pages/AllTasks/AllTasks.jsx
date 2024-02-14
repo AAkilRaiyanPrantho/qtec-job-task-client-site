@@ -32,7 +32,7 @@ const AllTasks = () => {
           <thead>
             <tr>
               
-              <th className="text-center">All Tasks</th>
+              <th className="text-center text-xl">All Tasks</th>
              
             </tr>
           </thead>
@@ -54,7 +54,7 @@ const AllTasks = () => {
           {/* head */}
           <thead>
             <tr>
-            <th className="text-center">Incomplete Tasks</th>
+            <th className="text-center text-xl">Incomplete Tasks</th>
               
             </tr>
           </thead>
@@ -80,7 +80,7 @@ const AllTasks = () => {
           {/* head */}
           <thead>
             <tr>
-              <th className="text-center">Completed Tasks</th>
+              <th className="text-center text-xl">Completed Tasks</th>
             </tr>
           </thead>
           <tbody>

@@ -1,3 +1,5 @@
+import { TfiCheckBox } from "react-icons/tfi";
+
 const Incomplete = ({ incomplete }) => {
   const { _id, taskName, taskDescription, dueDate, priority, status } =
     incomplete;
@@ -21,10 +23,9 @@ const Incomplete = ({ incomplete }) => {
           <p>
             Deadline: <span className="font-bold">{dueDate}</span>
           </p>
-          {/* <div className="card-actions justify-end">
-<button className="btn btn-error">Delete</button>
-  <button className="btn btn-primary">Update</button>
-</div> */}
+          <div className="card-actions justify-end">
+<button className="text-3xl btn btn-ghost tooltip" data-tip="Completed?"><TfiCheckBox/></button>
+</div>
         </div>
       </div>
     </div>
