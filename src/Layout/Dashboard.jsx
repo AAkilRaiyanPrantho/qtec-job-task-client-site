@@ -2,6 +2,7 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import { FaDoorOpen, FaHouse, FaList, FaPlus } from "react-icons/fa6";
 import { useContext, useEffect, useState } from "react"; // Import useEffect and useState
 import { AuthContext } from "../Components/AuthProvider/AuthProvider";
+import { BsMenuButtonWide } from "react-icons/bs";
 
 const Dashboard = () => {
   const { logOut, user } = useContext(AuthContext);
@@ -16,8 +17,8 @@ const Dashboard = () => {
   const handleLogOut = () => {
     logOut()
       .then(() => {
-        console.log("User logged Out")
-        navigate('/');
+        console.log("User logged Out");
+        navigate("/");
       })
       .catch((error) => console.error(error));
   };
@@ -29,10 +30,11 @@ const Dashboard = () => {
         <div className="drawer-content flex flex-col items-center max-lg:justify-center lg:justify-start p-4 text-center">
           <label
             htmlFor="my-drawer-2"
-            className="btn btn-primary drawer-button lg:hidden"
+            className="btn btn-ghost text-3xl lg:hidden"
           >
-            Open drawer
+            <BsMenuButtonWide />
           </label>
+          <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           <div>
             <h1 className="font-semibold text-2xl underline py-5 text-[#008080]">
               Welcome to your Taskify DashBoard
@@ -48,8 +50,8 @@ const Dashboard = () => {
             <Outlet></Outlet>
           </div>
         </div>
-        <div className="drawer-side bg-[#004D40]">
-          <div>
+        <div className="drawer-side lg:bg-[#004D40]">
+          <div className="max-lg:hidden">
             <h1 className="lg:px-10 lg:py-4 text-center text-3xl font-bold italic text-orange-300">
               Taskify
             </h1>
@@ -62,12 +64,25 @@ const Dashboard = () => {
               {user.displayName}
             </h2>
           </div>
+          
           <label
             htmlFor="my-drawer-2"
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
+          
           <ul className="menu p-4 w-80 min-h-full text-[#FFFFFF]">
+          <h1 className="my-4 text-3xl font-bold italic text-orange-300 lg:hidden">
+              Taskify
+            </h1>
+            <img
+              className="w-24 noHover mask mask-squircle lg:hidden" 
+              src={user.photoURL}
+              alt=""
+            />
+            <h2 className="my-4 text-xl text-orange-200 lg:hidden">
+              {user.displayName}
+            </h2>
             {/* Sidebar content here */}
             <li>
               <Link to={"/dashboard/allTasks"}>
@@ -94,9 +109,10 @@ const Dashboard = () => {
               </a>
             </li>
           </ul>
+          </div>
         </div>
       </div>
-    </div>
+    
   );
 };
 

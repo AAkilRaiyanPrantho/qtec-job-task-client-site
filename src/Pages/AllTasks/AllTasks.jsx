@@ -19,52 +19,12 @@ const AllTasks = () => {
 
   return (
     <div>
-      <div className="lg:hidden"> 
-        <h1 className="text-3xl text-center py-2 mb-4 outline-dotted">
-          Total Tasks Available: {tasks.length}
-        </h1>
-        <h1 className="text-center font-bold text-4xl text-[#333333] underline uppercase">
-          All Tasks
-        </h1>
-        <div className="grid grid-cols-1 justify-center items-center lg:grid-cols-2 p-4 lg:p-10 lg:gap-10">
-          {tasks.map((task) => (
-            <AllTask key={task._id} task={task}></AllTask>
-          ))}
-        </div>
-      </div>
-
-      {/* Showing the Completed Tasks */}
-      <div className="lg:hidden">
-        <h1 className="text-center font-bold text-4xl text-[#333333] underline uppercase">
-          Completed Tasks
-        </h1>
-        <div className="grid grid-cols-1 justify-center items-center  lg:grid-cols-2 p-4 lg:p-10 lg:gap-10">
-          {completeds.map((completed) => (
-            <Completed key={completed._id} completed={completed}></Completed>
-          ))}
-        </div>
-      </div>
-
-      {/* Showing the Incomplete Tasks */}
-      <div className="lg:hidden">
-        <h1 className="text-center font-bold text-4xl text-[#333333] underline uppercase">
-          Incomplete Tasks
-        </h1>
-        <div className="grid grid-cols-1 justify-center items-center  lg:grid-cols-2 p-4 lg:p-10 lg:gap-10">
-          {incompletes.map((incomplete) => (
-            <Incomplete
-              key={incomplete._id}
-              incomplete={incomplete}
-            ></Incomplete>
-          ))}
-        </div>
-      </div>
-
+     
       {/* Table Implementation Starts */}
-      <h1 className="text-3xl text-center py-2 mb-4 outline-dotted">
+      <h1 className="text-3xl text-center py-2 mb-4 outline-dotted max-lg:w-80 mx-auto lg:w-full">
         Total Tasks Available: {tasks.length}
       </h1>
-     <div className="flex flex-row">
+     <div className="flex lg:flex-row max-lg:flex-col max-lg:max-w-96">
          {/* Table 1 */}
       <div className="overflow-x-auto">
         <table className="table">
