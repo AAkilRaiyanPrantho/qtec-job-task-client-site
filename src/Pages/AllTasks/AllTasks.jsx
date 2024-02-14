@@ -1,10 +1,58 @@
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 import AllTask from "../AllTask/AllTask";
 import Completed from "../Completed/Completed";
 import Incomplete from "../Incomplete/Incomplete";
+import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
 
 const AllTasks = () => {
-  const tasks = useLoaderData();
+  // const tasks = useLoaderData();
+  const [tasks, setTasks] = useState([]);
+
+  const url = "http://localhost:5000/allTasks";
+  useEffect(() => {
+    fetch(url)
+    .then(res => res.json())
+    .then(data => setTasks(data))
+  }, []);
+
+  // Delete Operations
+  const handleDelete = _id => {
+    console.log(_id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        
+        console.log('delete confirmed')
+
+        fetch(`http://localhost:5000/allTasks/${_id}`,{
+          method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+          if(data.deletedCount > 0){
+            Swal.fire({
+          title: "Deleted!",
+          text: "Task has been deleted. Please Reload the page to see the results",
+          icon: "success"
+        });
+        const remaining = tasks.filter(task => task._id !== _id);
+        setTasks(remaining);
+          }
+        })
+        
+      }
+    });
+    
+  }
 
   // Completed Filter
   const completeds = tasks.filter((task) => task.status === "Completed");
@@ -40,7 +88,7 @@ const AllTasks = () => {
             <td>
               <div className="flex flex-col p-4 gap-10">
                 {tasks.map((task) => (
-                  <AllTask key={task._id} task={task}></AllTask>
+                  <AllTask key={task._id} task={task} handleDelete={handleDelete}></AllTask>
                 ))}
               </div>
             </td>

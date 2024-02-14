@@ -1,13 +1,13 @@
 
 import { useContext } from 'react';
-import Swal from 'sweetalert2';
+
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Components/AuthProvider/AuthProvider';
 
 import { AiTwotoneDelete } from "react-icons/ai";
 import { FaRegEdit } from "react-icons/fa";
 
-const AllTask = ( {task} ) => {
+const AllTask = ( {task , handleDelete} ) => {
     const{_id, taskName, taskDescription, dueDate, priority, status} = task;
 console.log(_id, taskName, taskDescription, dueDate, priority, status);
 
@@ -16,40 +16,7 @@ if(loading){
     return <span className="loading loading-bars loading-lg"></span>
 }
 
-const handleDelete = _id => {
-    console.log(_id);
-    Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        
-        console.log('delete confirmed')
 
-        fetch(`http://localhost:5000/allTasks/${_id}`,{
-          method: 'DELETE'
-        })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-          if(data.deletedCount > 0){
-            Swal.fire({
-          title: "Deleted!",
-          text: "Task has been deleted. Please Reload the page to see the results",
-          icon: "success"
-        });
-          }
-        })
-        
-      }
-    });
-    
-  }
 
 
 return (
