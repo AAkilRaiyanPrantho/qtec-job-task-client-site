@@ -23,7 +23,7 @@ const UpdateTask = () => {
         console.log(data);
     
         // Sending updated assignment to the server
-        fetch(`http://localhost:5000/allTasks/${_id}`,{
+        fetch(`https://qtec-job-task-server-site.vercel.app/allTasks/${_id}`,{
           method: 'PUT',
           headers: {
             'content-type': 'application/json'

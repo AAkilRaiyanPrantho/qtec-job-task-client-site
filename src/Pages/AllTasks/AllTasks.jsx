@@ -9,7 +9,7 @@ const AllTasks = () => {
   // const tasks = useLoaderData();
   const [tasks, setTasks] = useState([]);
 
-  const url = "http://localhost:5000/allTasks";
+  const url = "https://qtec-job-task-server-site.vercel.app/allTasks";
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -31,7 +31,7 @@ const AllTasks = () => {
       if (result.isConfirmed) {
         console.log("delete confirmed");
 
-        fetch(`http://localhost:5000/allTasks/${_id}`, {
+        fetch(`https://qtec-job-task-server-site.vercel.app/allTasks/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -57,7 +57,7 @@ const AllTasks = () => {
     console.log(newStatus);
 
     fetch(
-      `http://localhost:5000/allTasks/${incomplete._id}`,
+      `https://qtec-job-task-server-site.vercel.app/allTasks/${incomplete._id}`,
       {
         method: "PATCH",
         headers: {

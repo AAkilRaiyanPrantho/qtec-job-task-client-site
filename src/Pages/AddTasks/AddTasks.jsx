@@ -13,7 +13,7 @@ const AddTasks = () => {
     console.log(data);
 
     // Sending new task data to the server
-    fetch("http://localhost:5000/allTasks", {
+    fetch("https://qtec-job-task-server-site.vercel.app/allTasks", {
       method: "POST",
       headers: {
         "content-type": "application/json",

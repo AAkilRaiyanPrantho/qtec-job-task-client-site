@@ -51,12 +51,12 @@ const router = createBrowserRouter([
       {
         path: 'allTasks',
         element: <PrivateRoute><AllTasks></AllTasks></PrivateRoute>,
-        loader: () => fetch('http://localhost:5000/allTasks')
+        loader: () => fetch('https://qtec-job-task-server-site.vercel.app/allTasks')
       },
       {
         path: 'update/:id',
         element: <PrivateRoute><UpdateTask></UpdateTask></PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/allTasks/${params.id}`)
+        loader: ({params}) => fetch(`https://qtec-job-task-server-site.vercel.app/allTasks/${params.id}`)
       }
     ]
   }

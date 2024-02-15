@@ -36,7 +36,7 @@ const NavBar = () => {
     </div>
   </div>
   <div className="navbar-center hidden lg:flex lg:flex-col">
-  <p className="text-orange-300 text-3xl">TASKIFY</p>
+  <p className="text-[#1f8d7b] text-3xl">TASKIFY</p>
     <ul className="menu menu-horizontal px-1">
       {list}
     </ul>
