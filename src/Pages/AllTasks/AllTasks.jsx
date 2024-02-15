@@ -107,7 +107,8 @@ const AllTasks = () => {
     <div>
       {/* Table Implementation Starts */}
       <h1 className="text-3xl text-center py-2 mb-4 outline-dotted max-lg:w-80 mx-auto lg:w-full">
-        Total Tasks Available: {tasks.length}
+        Total Tasks Available: {tasks.length} <br></br>
+        Total Tasks Completed: {completeds.length}
       </h1>
       <div className="flex lg:flex-row max-lg:flex-col max-lg:max-w-96">
         {/* Table 1 */}
